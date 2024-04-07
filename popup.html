@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toggle Switch</title>
+<style>
+  .body{
+    background-color: transparent;
+  }
+  .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .circle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 4px; /* Adjust as necessary */
+    width: 22px;
+    height: 22px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  .toggle-switch span {
+    font-size: 10px;
+  }
+
+  .toggle-switch.active .circle {
+    left: calc(100% - 26px); /* Adjust as necessary */
+  }
+
+  .toggle-switch.active {
+    background-color: #2ecc71; /* Color when active */
+  }
+
+  .toggle-switch.active .circle {
+    left: calc(100% - 25px);
+    top: 50% !important;
+}
+</style>
+<script src="popup.js">
+</script>
+</head>
+<body>
+  <button id="toggleButton" class="toggle-switch">
+    <span>ON &nbsp; OFF</span>
+    <span class="circle"></span>
+  </button>
+  
+</body>
+</html>
