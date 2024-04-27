@@ -1,12 +1,12 @@
 {
   "manifest_version": 3,
   "name": "Inline search buttons",
-  "version": "1.0",
+  "version": "1.2",
   "description": "Adds clickable icons at the end of selected text.",
   "permissions": ["storage"],
   "background": {
     "service_worker": "background.js"
-  },  
+  },
   "content_scripts": [
     {
       "matches": ["https://*/*"],
