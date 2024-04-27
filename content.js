@@ -18,16 +18,6 @@ const googleString = `<svg width="20px" height="20px" viewBox="0 0 32 32" fill="
 </svg>`
 
 
-document.addEventListener('mouseup', function (event) {
-  chrome.storage.local.get(['extnOn'], function (result) {
-    if (result?.extnOn) {
-      addButtons();
-    } else {
-      return;
-    }
-  })
-});
-
 function addButtons() {
   var selectedText = window.getSelection().toString().trim();
   if (selectedText !== '') {
@@ -62,3 +52,24 @@ function addButtons() {
     }, 5000)
   }
 }
+
+chrome.storage.local.get(['extnOn'], function (result) {
+  if (result?.extnOn) {
+    document.addEventListener('mouseup', addButtons);
+  } else {
+    document.removeEventListener('mouseup', addButtons);
+  }
+});
+
+// Listen for changes in extnOn
+chrome.storage.onChanged.addListener(function(changes) {
+  if ('extnOn' in changes) {
+    var extnOn = changes.extnOn.newValue;
+    console.log("Changes value from contentjs", extnOn);
+    if (extnOn) {
+      document.addEventListener('mouseup', addButtons);
+    } else {
+      document.removeEventListener('mouseup', addButtons);
+    }
+  }
+});
