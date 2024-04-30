@@ -19,8 +19,7 @@ This is a simple Chrome extension that allows users to highlight text on a webpa
 ### Install as a Chrome Extension
 You can also install the extension directly from the Chrome Web Store:
 
-**Coming soon !**
-
+[**Chrome webstore**](https://chromewebstore.google.com/detail/inline-search-buttons/nofohhkfamkidgnbmkgdmbhkhmhdgfbm?hl=en-US)
 
 ## Usage
 Select any text on a webpage.
